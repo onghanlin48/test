@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Landing</title>
+  <link rel="icon" href="img/OC-01.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+</head>
+
+<body onload="showMessage()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Goat</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link active" href="index.html">Landing<span class="sr-only">(current)</span>  </a>
+            <a class="nav-link" href="blog.html">Blog</a>
+            <a class="nav-link" href="buy.html">Buy</a>
+        </div>
+    </div>
+</nav>
+  <div class="container">
+    <table class="center main_table">
+      <tr>
+        <th>
+          <br><br>
+          <img src="img/landing.png">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <h1>
+            "Berminat Menternak Kambing?"
+          </h1>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="red">
+            Ketahui... Bagaimana Cara Memulakan Penternakan Kambing Yang Betul Dengan Kos Yang Rendah! Tanpa Perlu
+            Membuat Sebarang Pinjaman!.
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <table class="second_table center">
+            <tr>
+              <th>
+                <h1>
+                  Tips & Sample Percuma
+                </h1>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Masukkan Nama & Email anda dibawah untuk menerima tips-tips berkaitan penternakan kambing secara
+                PERCUMA!.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div class="block">
+                  <form>
+                    <div class="container">
+                      <form action="/action_page.php">
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="fname">Name</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="name" name="firstname" placeholder="Enter you Name"
+                              onchange="UpperName()" required onmousemove="changecolor(this.id,'pink','black')"
+                              onmouseout="changecolor(this.id,'#3b3b3b','white')">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="lname">Email</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="email" name="lastname" placeholder="Enter your email"
+                              onchange="validateEmail()" required onmousemove="changecolor(this.id,'pink','black')"
+                              onmouseout="changecolor(this.id,'#3b3b3b','white')">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <input type="submit" value="Submit" onclick="validate()">
+                        </div>
+                      </form>
+                    </div>
+                  </form>
+                </div>
+              </th>
+            </tr>
+          </table>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          by ONG HAN LIN<br><br>
+        </th>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
